@@ -28,8 +28,14 @@ public class Service {
 
         return a.containsKey(id);
     }
-        public void Add (Warehouse warehouse,int warehouseid){
-        a.put(warehouseid,warehouse);
+        public void Add (Warehouse warehouse,int warehouseId){
+        a.put(warehouseId, warehouse);
+        }
+
+        //Call it in the Controller if you want to Test it
+        public void Test(){
+
+        Add(new Warehouse(201,"Location X",100), 201);
         }
 
 }
