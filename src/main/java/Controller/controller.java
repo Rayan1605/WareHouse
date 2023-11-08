@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class controller {
 
     private final Service service;
-     @GetMapping("/check/{id}")
-      public Warehouse Check(@PathVariable int id){
+     @GetMapping("/check")
+      public Warehouse Check(int id){
 
         return service.Check(id);
 
