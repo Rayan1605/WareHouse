@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class controller {
 
     private final Service service;
-     @GetMapping
+     @GetMapping("/check")
       public Warehouse Check(Product product){
 
         return service.Check(product);
