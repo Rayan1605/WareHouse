@@ -5,6 +5,7 @@ import Entity.Warehouse;
 import Sevice.Service;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,10 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class controller {
 
     private final Service service;
-     @GetMapping("/check")
-      public Warehouse Check(Product product){
+     @GetMapping("/check/{id}")
+      public Warehouse Check(@PathVariable int id){
 
-        return service.Check(product);
+        return service.Check(id);
 
      }
 

@@ -12,21 +12,14 @@ import java.util.*;
 @AllArgsConstructor
 public class Service {
     Map<Integer,Warehouse> a = new HashMap<>();
-    public Warehouse Check(Product product){
+    public Warehouse Check(int id){
 
-        if (check(product.getWarehouseId())){
+        if (check(id)){
 
-            Warehouse spare = a.get(product.getWarehouseId());
-
-            if (product.getQuantity() > spare.getCapacity()){
-                return new Warehouse(product.getWarehouseId(), spare.getLocation(),0);
-            }
-            else {
-                return new Warehouse(product.getWarehouseId(), spare.getLocation(),1);
-            }
+            return new Warehouse(id, a.get(id).getLocation(),a.get(id).getCapacity());
         }
         else {
-            return new Warehouse(product.getWarehouseId(), "Not Valid",0);
+            return new Warehouse(id, "Not Valid",0);
         }
 
     }
